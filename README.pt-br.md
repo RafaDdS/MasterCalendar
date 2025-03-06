@@ -1,4 +1,6 @@
 # Master Calendar
+[![en](https://img.shields.io/badge/lang-en-red.svg)](https://github.com/RafaDdS/MasterCalendar/blob/main/README.md)
+
 Script para automatizar e-mails do PESC para o Google Calendar.
 
 Este é um projeto rápido para resolver um problema muito específico. Quero uma automação para converter e-mails sobre apresentações de mestrado e doutorado em eventos no meu Google Calendar.
