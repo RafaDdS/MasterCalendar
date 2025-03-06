@@ -22,8 +22,8 @@ while True:
 			
 			titleMatch = re.search(r"tulo: ([-\w/() :,]+)", text)
 			linkMatch = re.search(r"Sala virtual:? ([\w:/.-]+)", text)
-			roomMatch = re.search(r"Sala( presencial)?: ([-\w ,]+)", text)
-			DateTimeMatch = re.search(r"Data\/hora\/local:\n- (\d+)\/(\d+)(\/(\d+))?[^\d]*(\d+):*(\d)*h?", text)
+			roomMatch = re.search(r"Sala( presencial)?:? (?!virtual)([-\w ,]+)", text)
+			DateTimeMatch = re.search(r"Data\/hora\/local:\n- (\d+)\/(\d+)(\/(\d+))?[^\d]*(\d+):?(\d*)h?", text)
 
 			title = titleMatch.group(1) if titleMatch else "Sem título"
 			link = linkMatch.group(1) if linkMatch else "Sem link"
@@ -40,7 +40,7 @@ while True:
 			print("Título: ", title)
 			print("Link: ", link)
 			print("Sala: ", room)
-			print("Horário: ", eventDateTime)
+			print("Horário: ", eventDateTime.strftime("%d/%m/%Y %H:%M"))
 
 			ok = input("Isso mesmo? (S/N): ")
 
